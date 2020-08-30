@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GADS Learders Board</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">John Darel</string>
+    <string name="learning_hours_and_country">203 Learning hours, Kenya</string>
+</resources>
