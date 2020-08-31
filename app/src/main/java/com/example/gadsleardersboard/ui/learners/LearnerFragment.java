@@ -1,4 +1,4 @@
-package com.example.gadsleardersboard.skilliqleaders;
+package com.example.gadsleardersboard.ui.learners;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.gadsleardersboard.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SkillIqFragment#newInstance} factory method to
+ * Use the {@link LearnerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillIqFragment extends Fragment {
+public class LearnerFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class SkillIqFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SkillIqFragment() {
+    public LearnerFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class SkillIqFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SkillIqFragment.
+     * @return A new instance of fragment LearnerFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SkillIqFragment newInstance(String param1, String param2) {
-        SkillIqFragment fragment = new SkillIqFragment();
+    public static LearnerFragment newInstance(String param1, String param2) {
+        LearnerFragment fragment = new LearnerFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class SkillIqFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_skill_iq, container, false);
+        return inflater.inflate(R.layout.fragment_learners, container, false);
     }
 }
