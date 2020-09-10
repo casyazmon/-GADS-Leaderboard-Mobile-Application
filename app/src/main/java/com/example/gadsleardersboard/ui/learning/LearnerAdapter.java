@@ -1,4 +1,4 @@
-package com.example.gadsleardersboard.ui;
+package com.example.gadsleardersboard.ui.learning;
 
 import android.content.Context;
 import android.view.LayoutInflater;

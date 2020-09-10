@@ -5,6 +5,13 @@
     android:layout_height="match_parent">
 
 
+    <ProgressBar
+        android:id="@+id/lProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_gravity="center"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecyclerView"
         android:layout_width="match_parent"

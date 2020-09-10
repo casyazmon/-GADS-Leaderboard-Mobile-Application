@@ -1,17 +1,17 @@
-package com.example.gadsleardersboard.ui;
+package com.example.gadsleardersboard.ui.learning;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gadsleardersboard.MainActivity;
 import com.example.gadsleardersboard.R;
 import com.example.gadsleardersboard.datasource.GetTopLeaders;
 import com.example.gadsleardersboard.datasource.LeadersBoardClient;
@@ -26,6 +26,7 @@ import retrofit2.Response;
 public class LearnersFragment extends Fragment {
     private RecyclerView myRecyclerView;
     private View root;
+    private ProgressBar mProgressBar;
     public LearnersFragment() {
         // Required empty public constructor
     }
@@ -42,11 +43,14 @@ public class LearnersFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root =  inflater.inflate(R.layout.fragment_learners, container, false);
+        mProgressBar = root.findViewById(R.id.lProgressBar);
         apiCall();
+
         return root;
     }
 
     public void apiCall() {
+        mProgressBar.setVisibility(View.VISIBLE);
         GetTopLeaders topLeaders = LeadersBoardClient.getRetrofitInstance().create(GetTopLeaders.class);
         Call<List<Learners>> call = topLeaders.getTopLearners();
 
@@ -55,11 +59,14 @@ public class LearnersFragment extends Fragment {
             public void onResponse(Call<List<Learners>> call, Response<List<Learners>> response) {
                 loadTopLearners(response.body());
                 Log.d("API Response", "onResponse: "+response.body());
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<List<Learners>> call, Throwable t) {
+                mProgressBar.setVisibility(View.GONE);
                 Toast.makeText(getContext(), "Unable to Load Leaders board", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
